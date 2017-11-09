@@ -7,7 +7,6 @@
       </md-button>
       <h1 class="md-title" style="flex: 1">Progressive Tamvan</h1>
     </md-toolbar>
-
     <!-- Left Side Nav -->
     <md-sidenav class="md-left" ref="leftSidenav">
       <md-toolbar class="md-large">
@@ -15,7 +14,6 @@
           <h3 class="md-title">Progresive Tamvan</h3>
         </div>
       </md-toolbar>
-
       <div class="phone-viewport">
         <md-list>
           <md-list-item @click.native="toggleSideNavLeft('/')">
@@ -29,14 +27,14 @@
         </md-list>
       </div>
     </md-sidenav>
-
     <md-layout md-gutter class="container">
-      <router-view></router-view>
+      <router-view/>
     </md-layout>
   </div>
 </template>
 
 <script>
+import Home from '@/components/Home'
 export default {
   name: 'app',
   methods: {
@@ -45,9 +43,12 @@ export default {
         this.$refs.leftSidenav.toggle()
       } else {
         this.$refs.leftSidenav.toggle()
-        this.router.push(route)
+        this.$router.push(route)
       }
     }
+  },
+  components: {
+    Home
   }
 }
 </script>

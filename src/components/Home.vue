@@ -5,28 +5,26 @@
       <md-card-media>
         <img src="cat.url" :alt="cat.comment">
       </md-card-media>
-
       <md-card-header>
         <div class="md-title">{{ cat.comment }}</div>
       </md-card-header>
-
       <md-card-actions>
         <router-link to="'/detail/'+cat['.key']">
           <md-button>Details</md-button>
         </router-link>
       </md-card-actions>
     </md-card>
+    <Detail/>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'home',
   firebase () {
-    {
-      cats: this.$db.ref('cats');
-    }
+    cats: this.$db.ref('cats')
   },
-  computed: {
+  computed () {
     latestCats: {
       this.cats.reverse()
     }

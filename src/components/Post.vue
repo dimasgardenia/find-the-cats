@@ -14,7 +14,6 @@
           <img v-else :src="randomCat.url">
         </div>
       </md-card-media>
-
       <md-card-content>
         <md-input-container>
           <label>What do you think about this cat?</label>
@@ -25,7 +24,6 @@
           <md-textarea v-model="randomCat.detail"></md-textarea>
         </md-input-container>
       </md-card-content>
-
       <md-card-actions>
         <md-button type="button" class="md-raised md-primary" @click.native="postCat">Post</md-button>
       </md-card-actions>
